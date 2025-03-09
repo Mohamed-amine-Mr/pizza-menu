@@ -20,7 +20,7 @@ This project helped me practice and reinforce my React skills, including:
 ## Installation & Usage
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/pizza-menu-app.git
+   git clone https://github.com/Mohamed-amine-Mr/pizza-menu-app.git
    ```
 2. Navigate into the project folder:
    ```sh
