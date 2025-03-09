@@ -17,7 +17,6 @@ export default App
 
 function Menu(){
   return(
-
     <main className='menu'>
     <h2>Our Menu</h2>
    <ul className='pizzas'>
@@ -25,8 +24,6 @@ function Menu(){
 // Passing the entire pizza object to the Pizza component
 // This allows the Pizza component to choose what data it needs from the object
    <Pizza  pizzaObj={pizza}   key={pizza.name}/>)}
-
-
    </ul>
     </main>
   )
@@ -42,7 +39,6 @@ function Pizza({pizzaObj}){
       <span>{pizzaObj.price}</span>
     </li>
     </li>
-
   )
 }
 

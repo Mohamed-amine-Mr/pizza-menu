@@ -1,18 +1,22 @@
 import "../style.css"
 
 export function Footer(){
-//     const hour = new Date().getHours();
-//     const openHour  = 9;
-//    const closeHour = 23
-  
-    //  console.log(("we're curenly open"))
-    // else console.log("We are close")
-  
+    const hour = new Date().getHours();
+    const openHour  = 11;
+   const closeHour = 23
+   const isOpen = hour >=openHour && hour <= closeHour  
   return (
   
   <footer className='footer'> 
-  {new Date().toLocaleTimeString()},{} we're curenly open
+
+{isOpen && 
+<div className="order"> 
+  <p>we're curenly open until {closeHour}:00. Come visit us or order online. </p>
+  <button className="btn">order</button>
+  </div>
+}
   </footer>
-  )
+)
+  
   
   }
