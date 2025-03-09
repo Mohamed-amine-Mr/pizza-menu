@@ -11,16 +11,14 @@ export function Footer(){
 {isOpen ?
 <Order data={closeHour}/> 
 : 
-<p>we're curenly Close until {openHour}:00 AM </p>
+<p>We're currently closed. We will reopen at {openHour}:00 AM.</p>
 }
   </footer>
 )
-  
-  
   }
 
 
-  function Order(data){
+  function Order({data}){
     
   return (
       <div className="order"> 
