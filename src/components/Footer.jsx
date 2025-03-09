@@ -8,13 +8,8 @@ export function Footer(){
   return (
   
   <footer className='footer'> 
-
 {isOpen ?
-<div className="order"> 
-  <p>we're curenly open until {closeHour}:00 PM. Come visit us or order online. </p>
-  <button className="btn">order</button>
-  </div>
-
+<Order data={closeHour}/> 
 : 
 <p>we're curenly Close until {openHour}:00 AM </p>
 }
@@ -23,3 +18,17 @@ export function Footer(){
   
   
   }
+
+
+  function Order(data){
+    
+  return (
+      <div className="order"> 
+  <p>we're curenly open until {data.closeHour}:00 PM. Come visit us or order online. </p>
+  <button className="btn">order</button>
+  </div>
+
+  )
+
+  }
+  
