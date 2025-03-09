@@ -1,9 +1,13 @@
 import React from 'react'
+import {Footer}from "./components/Footer"
+import {Header}from "./components/Header"
 import "./style.css"
- const App = () => {
+import pizzaData from "./data"
+ 
+const App = () => {
   return (
     <div className='container'>
-    <Header className=""/>
+    <Header/>
     <Menu/>
     <Footer/>
     </div>
@@ -11,57 +15,36 @@ import "./style.css"
 }
 export default App
 
-function Header(){
-  const style = {}
-  return <header className='header'>
-  <h1 className='' style={style} >Fast React Pizza Co.</h1>
-
-  </header>
-}
 function Menu(){
   return(
+
     <main className='menu'>
     <h2>Our Menu</h2>
-    <Pizza name="Pizza Funghi" ingredients="Tomato, mozarella, mushrooms, and onion" photoName="pizzas/funghi.jpg"price={12}/>
-    <Pizza name="Pizza Fungsshi" ingredients="Tomato, mozarella, mushrooms, and onion" photoName="pizzas/spinaci.jpg"price={12}/>
-  
+   <ul className='pizzas'>
+   {pizzaData.map((pizza)=>
+// Passing the entire pizza object to the Pizza component
+// This allows the Pizza component to choose what data it needs from the object
+   <Pizza  pizzaObj={pizza}   key={pizza.name}/>)}
+
+
+   </ul>
     </main>
   )
 }
-// reseave props
-// props obj made of the props that we pass to pizza component 
-function Pizza(props){
-  console.log(props)
+// We receive the entire pizza object as a prop and then destructure it to access the specific data we need.
+function Pizza({pizzaObj}){
   return (
-    // lets replace the values using props
-    <div className='pizza'> 
-      <img src={props.photoName} alt={props.name}/>
-    <div>
-        <h3 className=''>{props.name}</h3>
-    <p className="">{props.ingredients}</p>
-    <span>{props.price}</span>
-   
-   </div>
-   </div>
+    <li className='pizza'> 
+      <img src={pizzaObj.photoName} alt={pizzaObj.name}/>
+    <li>
+      <h3 >{pizzaObj.name}</h3>
+      <p >{pizzaObj.ingredients}</p>
+      <span>{pizzaObj.price}</span>
+    </li>
+    </li>
 
   )
 }
 
 
 
-
-function Footer(){
-  const hour = new Date().getHours();
-  const openHour  = 9;
- const closeHour = 23
-
-//  if (hour >= openHour &&hour <= closeHour  )alert("we're curenly open")
-
-return (
-
-<footer className='footer'> 
-{new Date().toLocaleTimeString()}, we're curenly open
-</footer>
-)
-
-}

@@ -42,3 +42,4 @@ const pizzaData = [
     soldOut: false,
   },
 ];
+export default pizzaData
