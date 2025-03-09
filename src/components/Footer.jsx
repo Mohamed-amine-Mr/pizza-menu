@@ -9,11 +9,14 @@ export function Footer(){
   
   <footer className='footer'> 
 
-{isOpen && 
+{isOpen ?
 <div className="order"> 
-  <p>we're curenly open until {closeHour}:00. Come visit us or order online. </p>
+  <p>we're curenly open until {closeHour}:00 PM. Come visit us or order online. </p>
   <button className="btn">order</button>
   </div>
+
+: 
+<p>we're curenly Close until {openHour}:00 AM </p>
 }
   </footer>
 )
